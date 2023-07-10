@@ -54,7 +54,7 @@ export default function Feed() {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5 }}
-                        className="bg-[rgb(43,29,68)] shadow-lg h-fit rounded-lg overflow-hidden"
+                        className="bg-[rgb(234,234,234)] shadow-lg h-fit rounded-lg overflow-hidden"
                     >
                         <img
                             src={blogPost.Image}
