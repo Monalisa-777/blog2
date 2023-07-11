@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
 import { AiOutlineCalendar } from 'react-icons/ai'
 import { FiUser } from 'react-icons/fi'
+import React, { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 
-export default function Feed() {
-
+const ap = () => {
     const [blogPosts, setBlogPosts] = useState([]);
-    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         const fetchBlogPosts = async () => {
@@ -25,40 +23,9 @@ export default function Feed() {
 
         fetchBlogPosts();
     }, []);
-
-    useEffect(() => {
-        const fetchCategories = async () => {
-            try {
-                const response = await fetch('/api/getCategory');
-                const data = await response.json();
-                if (response.ok) {
-                    setCategories(data.data);
-                } else {
-                    console.error('Failed to fetch categories');
-                }
-            } catch (error) {
-                console.error(error);
-            }
-        };
-
-        fetchCategories();
-    }, []);
-
-    return (
-        <div>
-        <div className='flex text-center text-white'>
-        <a href='http://localhost:3000' className='p-3'>Home</a>
-        <a href='#' className='p-3'></a>
-        <a href='ap' className='p-3'>All Posts</a>
-        <a href='https://www.kaam24x7.com/' className='p-3'>Categories</a>
-        
-        
-        </div>
-        
-
-
-        <div>
-            <h1 className='text-white text-center text-5xl text-mono'>All Posts</h1>
+  return (
+    <div>
+      <h1 className='text-white text-center text-5xl text-mono'>All Posts</h1>
             <div className="grid gap-16 mx-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-12">
                 {blogPosts.map((blogPost) => (
                     <motion.div
@@ -93,32 +60,8 @@ export default function Feed() {
 
                 ))}
             </div>
-            <h1 className='text-white text-center text-4xl text-mono py-8'>Categories</h1>
-            <div className="grid gap-10 mx-4 my-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-
-                {categories.map((nice) => (
-                    <motion.div
-
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5 }}
-                        className="bg-plum shadow-md h-full rounded-full overflow-hidden border-spacing-3 border-white border-x-4 border-y-4 bg-slate-200"
-                    >
-                        <img
-                            src={nice.categoryImage}
-                            alt="Blog Post"
-                            className="w-full h-[70%] object-cover"
-                        />
-                        <div className="pt-4">
-                            <h2 className="text-1xl font-bold font-mono mb-2 text-center text-blue-800">{nice.name}</h2>
-                        </div>
-                    </motion.div>
-                ))}
-
-
-            </div>
-        </div>
-    </div>    
-
-    )
+    </div>
+  )
 }
+
+export default ap

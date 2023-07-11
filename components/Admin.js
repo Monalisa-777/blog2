@@ -63,7 +63,7 @@ const AdminPanel = () => {
 
     return (
         <div>
-        <form onSubmit={addpost} className="max-w-xl mx-auto p-4 font-bold">
+        <form onSubmit={addpost} className="max-w-xl mx-auto p-2 font-bold">
         <div className="mb-4">
             <label htmlFor="title" className="block text-lg mb-1 text-white">
                 Title
