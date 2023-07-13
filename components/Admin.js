@@ -65,90 +65,90 @@ const AdminPanel = () => {
         <div>
         <form onSubmit={addpost} className="max-w-xl mx-auto p-2 font-bold">
         <div className="mb-4">
-            <label htmlFor="title" className="block text-lg mb-1 text-white">
+            <label htmlFor="title" className="block text-lg mb-1 text-black">
                 Title
             </label>
             <input
                 type="text"
                 id="title"
-                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                className="w-full px-4 py-2 border border-black rounded focus:outline-none focus:border-blue-500"
                 placeholder="Title"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
             />
         </div>
         <div className="mb-4">
-            <label htmlFor="headerImage" className="block text-lg mb-1 text-white">
+            <label htmlFor="headerImage" className="block text-lg mb-1 text-black">
                 Header Image URL
             </label>
             <input
                 type="text"
                 id="headerImage"
-                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                className="w-full px-4 py-2 border border-black rounded focus:outline-none focus:border-blue-500"
                 placeholder="Header Image URL"
                 value={Image}
                 onChange={(e) => setImage(e.target.value)}
             />
         </div>
         <div className="mb-4">
-            <label htmlFor="header" className="block text-lg mb-1 text-white">
+            <label htmlFor="header" className="block text-lg mb-1 text-black">
                 Header
             </label>
             <textarea
                 id="header"
-                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                className="w-full px-4 py-2 border border-black rounded focus:outline-none focus:border-blue-500"
                 placeholder="Header"
                 value={header}
                 onChange={(e) => setHeader(e.target.value)}
             ></textarea>
         </div>
         <div className="mb-4">
-            <label htmlFor="description" className="block text-lg mb-1 text-white">
+            <label htmlFor="description" className="block text-lg mb-1 text-black">
                 Description
             </label>
             <textarea
                 id="description"
-                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                className="w-full px-4 py-2 border border-black rounded focus:outline-none focus:border-blue-500"
                 placeholder="Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
             ></textarea>
         </div>
         <div className="mb-4">
-            <label htmlFor="author" className="block text-lg mb-1 text-white">
+            <label htmlFor="author" className="block text-lg mb-1 text-black">
                 Author
             </label>
             <input
                 type="text"
                 id="author"
-                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                className="w-full px-4 py-2 border border-black rounded focus:outline-none focus:border-blue-500"
                 placeholder="Author"
                 value={author}
                 onChange={(e) => setAuthor(e.target.value)}
             />
         </div>
         <div className="mb-4">
-            <label htmlFor="date" className="block text-lg mb-1 text-white">
+            <label htmlFor="date" className="block text-lg mb-1 text-black">
                 Date
             </label>
             <input
                 type="date"
                 id="date"
-                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                className="w-full px-4 py-2 border border-black rounded focus:outline-none focus:border-blue-500"
                 placeholder="Date"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
             />
         </div>
         <div className="mb-4">
-            <label htmlFor="categoryName" className="block text-lg mb-1 mt-4 text-white">
+            <label htmlFor="categoryName" className="block text-lg mb-1 mt-4 text-black">
                 Select Category
             </label>
             <select
                 id="category"
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
+                className="w-full px-4 py-2 border border-black rounded focus:outline-none focus:border-blue-500"
                 required
             >
                 <option value="" >Select a category</option>
@@ -161,7 +161,7 @@ const AdminPanel = () => {
         </div>
         <button
             type="submit"
-            className="bg-blue-500 text-white font-extrabold mt-4 py-2 px-4 rounded hover:bg-blue-600"
+            className="bg-black text-white font-extrabold mt-4 py-2 px-4 rounded hover:bg-grey-600"
         >
             Publish
         </button>
@@ -171,7 +171,7 @@ const AdminPanel = () => {
 
 <form onSubmit={addcategory}>
               <div className="mb-4">
-                <label htmlFor="categoryName" className="block text-[#F6F4EE] font-bold font-darkage mb-2">
+                <label htmlFor="categoryName" className="block text-black font-bold font-darkage mb-2">
                   Category Name
                 </label>
                 <input
@@ -179,20 +179,20 @@ const AdminPanel = () => {
                   id="categoryName"
                   value={categoryName}
                   onChange={(e) => setCategoryName(e.target.value)}
-                  className="w-full font-darkage border border-gray-300 rounded px-3 py-2 focus:outline-none bg-[#F6F4EE] text-[#5E474C] focus:border-[#F6F4EE]"
+                  className="w-full font-darkage border border-black rounded px-3 py-2 focus:outline-none bg-[#F6F4EE] text-[#5E474C] focus:border-[#F6F4EE]"
                   placeholder="Enter category name"
                   required
                 />
               </div>
               <div className="mb-4">
-                <label htmlFor="categoryImage" className="block text-[#F6F4EE] font-bold font-darkage mb-2">
+                <label htmlFor="categoryImage" className="block text-black font-bold font-darkage mb-2">
                   Category Image
                 </label>
                 <input
                   type="text"
                   id="categoryImage"
                  
-                  className="w-full font-darkage"
+                  className="w-full font-darkage text-black border border-black"
                   onChange={(e)=> setCategoryImage(e.target.value)}
                   required
                 />
@@ -200,13 +200,13 @@ const AdminPanel = () => {
               <div className="flex justify-end">
                 <button
                   type="button"
-                  className="text-[#F6F4EE] font-extrabold font-coffee mr-4"
+                  className="text-white bg-black hover:bg-slate-600 rounded py-2 px-4 font-semibold font-coffee mr-4"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="bg-[#F6F4EE] hover:bg-green-200 text-[#5E474C] font-semibold py-2 px-4 rounded font-coffee"
+                  className="bg-black hover:bg-slate-600 text-white font-semibold py-2 px-4 rounded font-coffee"
                  
                 >
                   Publish

@@ -1,13 +1,13 @@
+import {FaInstagram, FaTwitter, FaLinkedin, FaGithub} from 'react-icons/fa';
+import { motion } from "framer-motion"
 import React, { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
 import { AiOutlineCalendar } from 'react-icons/ai'
 import { FiUser } from 'react-icons/fi'
 
-export default function Feed() {
 
+const hp = () => {
     const [blogPosts, setBlogPosts] = useState([]);
-    const [categories, setCategories] = useState([]);
-
+    
     useEffect(() => {
         const fetchBlogPosts = async () => {
             try {
@@ -25,36 +25,59 @@ export default function Feed() {
 
         fetchBlogPosts();
     }, []);
+  return (
+    <div className='h-screen w-full'>
+    <div className='w-full h-[15%] flex bg-black text-white'>
+    <div className='h-[100%] w-fit flex'>
+            <img src= 'p.webp' alt='image' className='h-full w-full'/>
 
-    useEffect(() => {
-        const fetchCategories = async () => {
-            try {
-                const response = await fetch('/api/getCategory');
-                const data = await response.json();
-                if (response.ok) {
-                    setCategories(data.data);
-                } else {
-                    console.error('Failed to fetch categories');
-                }
-            } catch (error) {
-                console.error(error);
-            }
-        };
+           
+            </div>
+            <div className='pl-[30%] p-4'>
+            <h1 className='md:text-5xl text-white font-mono'>Test Blog</h1>
+            </div>
 
-        fetchCategories();
-    }, []);
+            <div className=' flex mx-auto space-x-8 w-[10%] h-[40%] mt-10'>
+              <a
+              href='#'>
+                <FaInstagram size={24}/>
+              </a>
+              <a
+              href='#'>
+              <FaLinkedin size={24}/>
+              </a>
+              <a href='#'>
+              <FaTwitter size={24}/>
+              </a>
+              
+              <a href='#'>
+              <FaGithub size={24}/>
+              </a>
 
-    return (
-         <div>
-         <div className=' flex justify-center space-x-32 text-white text-2xl font-mono pb-10'>
-         <a href='hp' className=' hover:text-purple-600'>Home</a>
-         <a href='ap.js' className=' hover:text-purple-600'>All Post</a>
-         <a href='c' className=' hover:text-purple-600'>Categories</a>
-         <a href='' className=' hover:text-purple-600'>About Us</a>
+               </div>
+    </div>           
+
+               <div className='w-full bg-black mx-auto mb-8 '>
+         
+         <motion.div
+             initial={{opacity:0, Scale:0.8}}
+             animate={{opacity:1, Scale:1}}
+             className="w-full mx-auto h-[50%] "
+             >
+                <img src='b2.gif' alt='gif' className='w-full h-[50%] object-fill'/> 
+                </motion.div>
+
+          </div>
+          
+        <div className=' flex justify-center space-x-32 text-white text-2xl font-mono pb-10'>
+        <a href='hp' className=' hover:text-purple-600'>Home</a>
+        <a href='ap' className=' hover:text-purple-600'>All Post</a>
+        <a href='c' className=' hover:text-purple-600'>Categories</a>
+        <a href='c' className=' hover:text-purple-600'>About Us</a>
         
-         </div>
-        
-         <div>
+        </div>
+
+        {/* <div>
             <h1 className='text-white text-center text-5xl font-mono pt-4'>All Posts</h1>
             <div className="grid gap-16 mx-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-12">
                 {blogPosts.map((blogPost) => (
@@ -90,42 +113,13 @@ export default function Feed() {
 
 
                 ))}
-            </div>
-            <h1 className='text-white text-center text-4xl font-mono py-8'>Categories</h1>
-            <div className="grid gap-10 mx-4 my-5 grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-                <style>
-                    @keyframes style {
-                        
-                    }
-                </style>
 
-                {categories.map((nice) => (
-                    <motion.div
+               
 
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5 }}
-                        className="bg-plum shadow-md h-full rounded-full overflow-hidden border-spacing-3 border-white border-x-4 border-y-4 bg-slate-200"
-                    
-                    
-                    >
-
-                        
-                        <img
-                            src={nice.categoryImage}
-                            alt="Blog Post"
-                            className="w-full h-[70%] object-cover"
-                        />
-                        <div className="pt-4">
-                            <h2 className="text-1xl font-bold font-mono mb-2 text-center text-blue-800">{nice.name}</h2>
-                        </div>
-                    </motion.div>
-                ))}
-
-
-            </div>
-        </div> 
-    </div>    
-
-    )
+          </div>  
+          </div>   */}
+          </div> 
+  )
 }
+
+export default hp
